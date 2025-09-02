@@ -791,25 +791,32 @@ ul, ol {
     padding: 2rem 0;
 }
 
-.success-message {
+.success-message,
+.error-message {
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 200px;
     padding: 2rem;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.success-message.fade-out {
+    opacity: 0.3;
+    transform: scale(0.98);
 }
 
 .success-message h3 {
-    font-size: 1.6rem;
-    font-weight: 500;
+    font-size: 1.5rem;
+    font-weight: 400;
     margin: 0;
 }
 
 .error-message h3 {
     color: #ef4444;
     font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
+    font-weight: 400;
+    margin: 0;
 }
 
 .success-message p,

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Nerdy Parents Club of Cambridge</title>
-    <link rel="icon" type="image/png" href="terminal.png">
+    <link rel="icon" type="image/png" href="nerdy.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -222,6 +222,7 @@
             // Reset form and messages, restore all elements
             document.getElementById('signup-form').reset();
             document.getElementById('signup-success').style.display = 'none';
+            document.getElementById('signup-success').classList.remove('fade-out');
             document.getElementById('signup-error').style.display = 'none';
             document.getElementById('signup-form').style.display = 'block';
             document.querySelector('.modal-close-container').style.display = 'flex';
@@ -277,15 +278,22 @@
                     
                     // Show success message and hide other elements
                     form.style.display = 'none';
-                    document.querySelector('.modal-close-container').style.display = 'none';
                     document.querySelector('.modal-header').style.display = 'none';
                     document.querySelector('.modal-description').style.display = 'none';
                     document.getElementById('signup-success').style.display = 'flex';
                     
-                    // Auto-close modal after 3 seconds
+                    // Auto-close modal with smooth fade-out
+                    const successMessage = document.getElementById('signup-success');
+                    
+                    // Phase 1: Start fade-out after 4 seconds
+                    setTimeout(() => {
+                        successMessage.classList.add('fade-out');
+                    }, 4000);
+                    
+                    // Phase 2: Close modal after fade-out completes
                     setTimeout(() => {
                         closeSignupModal();
-                    }, 3000);
+                    }, 4700);
                 }).catch(error => {
                     console.error('Error:', error);
                     
@@ -294,9 +302,11 @@
                     btnLoading.style.display = 'none';
                     submitBtn.disabled = false;
                     
-                    // Show error message
+                    // Show error message and hide other elements
                     form.style.display = 'none';
-                    document.getElementById('signup-error').style.display = 'block';
+                    document.querySelector('.modal-header').style.display = 'none';
+                    document.querySelector('.modal-description').style.display = 'none';
+                    document.getElementById('signup-error').style.display = 'flex';
                 });
             });
         });
