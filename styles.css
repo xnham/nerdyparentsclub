@@ -429,352 +429,7 @@ ul, ol {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* ================================
-   MEDIA QUERIES (Large to Small)
-   ================================ */
 
-/* Small Desktop (769px - 1380px) */
-@media (min-width: 769px) and (max-width: 1380px) {
-    /* Typography adjustments */
-    ul, ol {
-        font-size: 1.4rem;
-        margin-bottom: 1.8rem;
-    }
-
-    .eyebrow {
-        font-size: 1rem;
-    }
-
-    .main-headline h1 {
-        font-size: 4rem;
-    }
-
-    .emphasis {
-        font-size: 1.8rem;
-    }
-
-    .section-text-1,
-    .section-text-2 {
-        font-size: 1.3rem;
-    }
-
-    /* Layout adjustments */
-    .icon-text-grid {
-        gap: 0 0.4rem;
-    }
-    
-    .icon-text-grid .icon {
-        font-size: 1.2rem;
-        margin-top: 0.45rem;
-    }
-
-    /* Small desktop specific positioning */
-    .floating-cta {
-        bottom: 0;
-    }
-}
-
-/* Tablet & Mobile Shared Styles (1380px and below) */
-@media (max-width: 1380px) {
-    /* Components - Floating CTA - Responsive behavior */
-    .floating-cta {
-        top: auto;
-        right: 0;
-        left: auto;
-        transform: none;
-        box-shadow: none;
-        border: none;
-        background: transparent;
-        max-width: none;
-    }
-
-    .floating-cta.hidden {
-        transform: translateY(20px);
-    }
-
-    .floating-cta-content {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        align-items: center;
-        gap: 1rem;
-    }
-
-    .floating-cta-text,
-    .floating-cta-disclaimer,
-    .floating-cta-questions {
-        display: none;
-    }
-
-    .floating-cta-button {
-        background: var(--yellow-bg);
-        color: var(--black);
-        width: 200px;
-        padding: 14px 0;
-        font-size: 1.4rem;
-        font-weight: 600;
-        border-radius: 12px;
-        border: 2px solid var(--black);
-        transition: all 0.2s ease;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .floating-cta-button:hover {
-        transform: translateY(-2px);
-    }
-
-    .floating-cta-button:active {
-        transform: translateY(0);
-    }
-}
-
-/* Tablet Styles (501px - 768px) */
-@media (max-width: 768px) and (min-width: 501px) {
-    /* Typography adjustments */
-    ol, ul {
-        font-size: 1.2rem;
-    }
-
-    .eyebrow {
-        font-size: 0.9rem;
-    }
-
-    .main-headline h1 {
-        font-size: 3.2rem;
-    }
-
-    .emphasis {
-        text-align: left;
-        font-size: 1.4rem;
-    }
-
-    .emphasis-support {
-        text-align: left;
-        font-size: 1.1rem;
-        margin-bottom: 0.5rem;
-    }
-
-    .section-headline {
-        font-size: 2.2rem;
-    }
-
-    .section-text-1,
-    .section-text-2 {
-        font-size: 1.2rem;
-    }
-
-    /* Layout adjustments */
-    .icon-text-grid {
-        gap: 0.8rem 0.4rem;
-    }
-
-    .icon-text-grid .text {
-        line-height: 1.5;
-    }
-
-    .icon-text-grid .icon {
-        margin-top: 0.35rem;
-        font-size: 1.1rem;
-    }
-
-    /* Section layout */
-    .section {
-        padding: 4rem 1.2rem;
-    }
-
-    .section-container {
-        max-width: 95%;
-    }
-
-    /* Post-it notes responsive for tablet */
-    .project-idea {
-        width: 25vw;
-        height: 25vw;
-        font-size: 1rem;
-        margin: 0.8rem;
-    }
-    
-    .project-title {
-        font-size: 1.1rem;
-    }
-    
-    .project-description {
-        font-size: 0.9rem;
-    }
-}
-
-/* Tablet & Mobile Positioning (768px and below) */
-@media (max-width: 768px) {
-    .floating-cta {
-        bottom: max(0.5rem, env(safe-area-inset-bottom));
-        right: max(1rem, env(safe-area-inset-right));
-        left: max(1rem, env(safe-area-inset-left));
-    }
-
-    /* Modal responsive styles */
-    .modal-content {
-        margin: 1rem;
-        max-height: calc(100vh - 2rem);
-        border-radius: 12px;
-    }
-    
-    .modal-description {
-        font-size: 1rem;
-    }
-
-    .modal-body {
-        padding: 0.5rem 2rem 3.6rem 2rem;
-    }
-
-    .modal-close-container {
-        width: 100%;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        padding: 1rem 1rem 0 2rem;
-    }
-}
-
-/* Post-it Notes and Floating CTA Adjustment (680px and below) */
-@media (max-width: 680px) {
-    .project-idea {
-        width: 40vw;
-        height: 40vw;
-        font-size: 1rem;
-        margin: 0.5rem;
-    }
-    
-    .project-title {
-        font-size: 1.1rem;
-        margin-bottom: 0.4rem;
-    }
-    
-    .project-description {
-        font-size: 1rem;
-    }
-
-    .floating-cta-content {
-        justify-content: center;
-    }
-}
-
-/* Mobile Styles (500px and below) */
-@media (max-width: 500px) {
-    /* Typography adjustments */
-    ol, ul {
-        font-size: 1.1rem;
-    }
-
-    .eyebrow {
-        font-size: 0.9rem;
-    }
-
-    .main-headline h1 {
-        font-size: 2.8rem;
-    }
-
-    .emphasis {
-        text-align: left;
-        font-size: 1.2rem;
-    }
-
-    .emphasis-support {
-        text-align: left;
-        font-size: 1rem;
-        margin-bottom: 0.5rem;
-    }
-
-    .section-headline {
-        font-size: 1.8rem;
-    }
-
-    .section-text-1,
-    .section-text-2 {
-        font-size: 1.1rem;
-    }
-
-    .icon-text-grid {
-        gap: 0.8rem 0.4rem;
-    }
-
-    .icon-text-grid .text {
-        line-height: 1.5;
-    }
-
-    .icon-text-grid .icon {
-        margin-top: 0.4rem;
-        font-size: 1rem;
-    }
-
-    /* Layout adjustments */
-    .section {
-        padding: 3rem 0.5rem;
-    }
-
-    .section-container {
-        max-width: 95%;
-    }
-
-    /* Component adjustments */
-    .cta-headline {
-        font-size: 1.8rem;
-    }
-
-    .cta-disclaimer {
-        font-size: 0.8rem;
-    }
-
-    .cta-button {
-        font-size: 1.2rem;
-    }
-
-    .footer-content p {
-        font-size: 0.7rem;
-    }
-}
-
-/* Extra Small Mobile (480px and below) */
-@media (max-width: 480px) {
-    /* Modal responsive adjustments */
-    .modal-header h2 {
-        font-size: 1.4rem;
-        line-height: 1.3;
-    }
-
-    .form-group input {
-        padding: 10px 12px;
-    }
-    
-    .form-submit-btn {
-        padding: 12px 20px;
-        font-size: 1.1rem;
-    }
-
-    .modal-body {
-        padding: 0.5rem 1.5rem 3.5rem 1.5rem;
-    }
-}
-
-/* Extremely Small Mobile (400px and below) */
-@media (max-width: 400px) {
-    .section {
-        width: 100vw;
-        padding: 3rem 10px;
-    }
-
-    .section-container {
-        width: 100vw;
-    }
-
-    .project-idea {
-        width: 85vw;
-        max-width: 240px;
-        height: 85vw;
-        max-height: 240px;
-    }
-}
 
 /* ================================
    COMPONENTS - SIGNUP MODAL
@@ -984,5 +639,354 @@ ul, ol {
     line-height: 1.5;
     opacity: 0.9;
     margin-bottom: 0;
+}
+
+/* ================================
+   MEDIA QUERIES (Large to Small)
+   ================================ */
+
+/* Small Desktop (769px - 1380px) */
+@media (min-width: 769px) and (max-width: 1380px) {
+    /* Typography adjustments */
+    ul, ol {
+        font-size: 1.4rem;
+        margin-bottom: 1.8rem;
+    }
+
+    .eyebrow {
+        font-size: 1rem;
+    }
+
+    .main-headline h1 {
+        font-size: 4rem;
+    }
+
+    .emphasis {
+        font-size: 1.8rem;
+    }
+
+    .section-text-1,
+    .section-text-2 {
+        font-size: 1.3rem;
+    }
+
+    /* Layout adjustments */
+    .icon-text-grid {
+        gap: 0 0.4rem;
+    }
+    
+    .icon-text-grid .icon {
+        font-size: 1.2rem;
+        margin-top: 0.45rem;
+    }
+
+    /* Small desktop specific positioning */
+    .floating-cta {
+        bottom: 0;
+    }
+}
+
+/* Tablet & Mobile Shared Styles (1380px and below) */
+@media (max-width: 1380px) {
+    /* Components - Floating CTA - Responsive behavior */
+    .floating-cta {
+        top: auto;
+        right: 0;
+        left: auto;
+        transform: none;
+        box-shadow: none;
+        border: none;
+        background: transparent;
+        max-width: none;
+    }
+
+    .floating-cta.hidden {
+        transform: translateY(20px);
+    }
+
+    .floating-cta-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .floating-cta-text,
+    .floating-cta-disclaimer,
+    .floating-cta-questions {
+        display: none;
+    }
+
+    .floating-cta-button {
+        background: var(--yellow-bg);
+        color: var(--black);
+        width: 200px;
+        padding: 14px 0;
+        font-size: 1.4rem;
+        font-weight: 600;
+        border-radius: 12px;
+        border: 2px solid var(--black);
+        transition: all 0.2s ease;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .floating-cta-button:hover {
+        transform: translateY(-2px);
+    }
+
+    .floating-cta-button:active {
+        transform: translateY(0);
+    }
+}
+
+/* Tablet Styles (501px - 768px) */
+@media (max-width: 768px) and (min-width: 501px) {
+    /* Typography adjustments */
+    ol, ul {
+        font-size: 1.2rem;
+    }
+
+    .eyebrow {
+        font-size: 0.9rem;
+    }
+
+    .main-headline h1 {
+        font-size: 3.2rem;
+    }
+
+    .emphasis {
+        text-align: left;
+        font-size: 1.4rem;
+    }
+
+    .emphasis-support {
+        text-align: left;
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .section-headline {
+        font-size: 2.2rem;
+    }
+
+    .section-text-1,
+    .section-text-2 {
+        font-size: 1.2rem;
+    }
+
+    /* Layout adjustments */
+    .icon-text-grid {
+        gap: 0.8rem 0.4rem;
+    }
+
+    .icon-text-grid .text {
+        line-height: 1.5;
+    }
+
+    .icon-text-grid .icon {
+        margin-top: 0.35rem;
+        font-size: 1.1rem;
+    }
+
+    /* Section layout */
+    .section {
+        padding: 4rem 1.2rem;
+    }
+
+    .section-container {
+        max-width: 95%;
+    }
+
+    /* Modal responsive styles */
+
+    .modal-content {
+        max-height: calc(100vh - 2rem);
+        border-radius: 12px;
+    }
+
+    .modal-body {
+        padding: 0.5rem 2rem 3.6rem 2rem;
+    }
+
+    /* Post-it notes responsive for tablet */
+    .project-idea {
+        width: 25vw;
+        height: 25vw;
+        font-size: 1rem;
+        margin: 0.8rem;
+    }
+    
+    .project-title {
+        font-size: 1.1rem;
+    }
+    
+    .project-description {
+        font-size: 0.9rem;
+    }
+}
+
+/* Tablet & Mobile Positioning (768px and below) */
+@media (max-width: 768px) {
+    .floating-cta {
+        bottom: max(0.5rem, env(safe-area-inset-bottom));
+        right: max(1rem, env(safe-area-inset-right));
+        left: max(1rem, env(safe-area-inset-left));
+    }
+
+    /* Modal responsive styles */
+    .modal-close-container {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 1rem 1rem 0 2rem;
+    }
+
+    .modal-description {
+        font-size: 1rem;
+    }
+}
+
+/* Post-it Notes and Floating CTA Adjustment (680px and below) */
+@media (max-width: 680px) {
+    .project-idea {
+        width: 40vw;
+        height: 40vw;
+        font-size: 1rem;
+        margin: 0.5rem;
+    }
+    
+    .project-title {
+        font-size: 1.1rem;
+        margin-bottom: 0.4rem;
+    }
+    
+    .project-description {
+        font-size: 1rem;
+    }
+
+    .floating-cta-content {
+        justify-content: center;
+    }
+}
+
+/* Mobile Styles (500px and below) */
+@media (max-width: 500px) {
+    /* Typography adjustments */
+    ol, ul {
+        font-size: 1.1rem;
+    }
+
+    .eyebrow {
+        font-size: 0.9rem;
+    }
+
+    .main-headline h1 {
+        font-size: 2.8rem;
+    }
+
+    .emphasis {
+        text-align: left;
+        font-size: 1.2rem;
+    }
+
+    .emphasis-support {
+        text-align: left;
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .section-headline {
+        font-size: 1.8rem;
+    }
+
+    .section-text-1,
+    .section-text-2 {
+        font-size: 1.1rem;
+    }
+
+    .icon-text-grid {
+        gap: 0.8rem 0.4rem;
+    }
+
+    .icon-text-grid .text {
+        line-height: 1.5;
+    }
+
+    .icon-text-grid .icon {
+        margin-top: 0.4rem;
+        font-size: 1rem;
+    }
+
+    /* Layout adjustments */
+    .section {
+        padding: 3rem 0.5rem;
+    }
+
+    .section-container {
+        max-width: 95%;
+    }
+
+    /* Component adjustments */
+    .cta-headline {
+        font-size: 1.8rem;
+    }
+
+    .cta-disclaimer {
+        font-size: 0.8rem;
+    }
+
+    .cta-button {
+        font-size: 1.2rem;
+    }
+
+    .footer-content p {
+        font-size: 0.7rem;
+    }
+}
+
+/* Extra Small Mobile (480px and below) */
+@media (max-width: 480px) {
+    /* Modal responsive adjustments */
+    .modal-header h2 {
+        font-size: 1.4rem;
+        line-height: 1.3;
+    }
+
+    .form-group input {
+        padding: 10px 12px;
+    }
+    
+    .form-submit-btn {
+        padding: 12px 20px;
+        font-size: 1.1rem;
+    }
+
+    .modal-body {
+        padding: 0.5rem 1rem 3.5rem 1rem;
+    }
+
+}
+
+/* Extremely Small Mobile (400px and below) */
+@media (max-width: 400px) {
+    .section {
+        width: 100vw;
+        padding: 3rem 10px;
+    }
+
+    .section-container {
+        width: 100vw;
+    }
+
+    .project-idea {
+        width: 85vw;
+        max-width: 240px;
+        height: 85vw;
+        max-height: 240px;
+    }
 }
 
