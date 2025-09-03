@@ -211,7 +211,7 @@ ul, ol {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    opacity: 0.9;
+    opacity: 0.95;
     color: inherit;
     font-size: 1.3rem;
     margin-top: 0.5rem;
