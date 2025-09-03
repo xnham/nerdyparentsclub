@@ -6,9 +6,14 @@
     --black: #353535;
     --white: #ffffff;
     --yellow: rgba(255, 251, 0, 1);
+    --yellow-bg: rgba(255, 251, 0, 0.95);
+    --error-red: #ef4444;
     --color-1: #b0eaff;
     --color-2: #cfefff;
     --color-3: #0093ff;
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-medium: rgba(0, 0, 0, 0.15);
+    --shadow-dark: rgba(0, 0, 0, 0.2);
 }
 
 /* ================================
@@ -283,14 +288,14 @@ ul, ol {
     position: fixed;
     bottom: 2rem;
     right: 2rem;
-    background: rgb(255, 255, 255, 1);
+    background: var(--white);
     color: var(--black);
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 20px var(--shadow-medium);
     padding: 2.8rem 2.2rem 2.5rem 2.2rem;
     z-index: 1000;
     transition: all 0.3s ease;
-    border: 1px solid rgba(53, 53, 53, 0.1);
+    border: 1px solid var(--shadow-light);
     max-width: 260px;
 }
 
@@ -374,13 +379,10 @@ ul, ol {
    ================================ */
 /* Small desktop styles */
 @media (max-width: 1380px) and (min-width: 769px) {
-    /* Typography */
+    /* Typography adjustments */
     ul, ol {
         font-size: 1.4rem;
-        line-height: 1.6;
-        font-weight: 400;
         margin-bottom: 1.8rem;
-        margin-left: 30px;
     }
 
     .eyebrow {
@@ -395,82 +397,26 @@ ul, ol {
         font-size: 1.8rem;
     }
 
-    .section-text-1 {
-        font-size: 1.3rem;
-    }
-
+    .section-text-1,
     .section-text-2 {
         font-size: 1.3rem;
     }
 
-    /* Layout - Two Column Icon Text */
+    /* Layout adjustments */
     .icon-text-grid {
         gap: 0 0.5rem;
     }
     
     .icon-text-grid .icon {
-        font-size: 1.2rem; /* 0.1rem smaller than 1.3rem text size */
+        font-size: 1.2rem;
         margin-top: 0.45rem;
     }
 
-    /* Components - Floating CTA */
-    .floating-cta {
-        top: auto;
-        bottom: 0;
-        right: 0;
-        left: auto;
-        transform: none;
-        box-shadow: none;
-        border: none;
-        background: rgb(255, 255, 255, 0);
-        max-width: none;
-    }
-
-    .floating-cta.hidden {
-        transform: translateY(20px);
-    }
-
-    .floating-cta-content {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        align-items: center;
-        gap: 1rem;
-    }
-
-    .floating-cta-text,
-    .floating-cta-disclaimer,
-    .floating-cta-questions {
-        display: none;
-    }
-
-    .floating-cta-button {
-        background: rgba(255, 251, 0, 0.95);
-        color: var(--black);
-        width: 200px;
-        padding: 14px 0;
-        font-size: 1.4rem;
-        font-weight: 600;
-        border-radius: 12px;
-        border: 2px solid var(--black);
-        transition: all 0.2s ease;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .floating-cta-button:hover {
-        transform: translateY(-2px);
-    }
-
-    .floating-cta-button:active {
-        transform: translateY(0);
-    }
 }
 
 /* Tablet styles */
 @media (max-width: 768px) and (min-width: 501px) {
-    /* Typography */
+    /* Typography adjustments */
     ol, ul {
         font-size: 1.2rem;
     }
@@ -498,24 +444,21 @@ ul, ol {
         font-size: 2.2rem;
     }
 
-    .section-text-1 {
-        font-size: 1.2rem;
-    }
-
+    .section-text-1,
     .section-text-2 {
         font-size: 1.2rem;
     }
 
-    /* Layout - Two Column Icon Text */
+    /* Layout adjustments */
     .icon-text-grid {
         gap: 0 0.8rem;
     }
     
     .icon-text-grid .icon {
-        font-size: 1.1rem; /* 0.1rem smaller than 1.2rem text size */
+        font-size: 1.1rem;
     }
 
-    /* Layout - Sections */
+    /* Section layout */
     .section {
         padding: 4rem 1.2rem;
     }
@@ -527,7 +470,7 @@ ul, ol {
 
 /* Mobile styles */
 @media (max-width: 500px) {
-    /* Typography */
+    /* Typography adjustments */
     ol, ul {
         font-size: 1.1rem;
     }
@@ -555,19 +498,16 @@ ul, ol {
         font-size: 1.8rem;
     }
 
-    .section-text-1 {
-        font-size: 1.1rem;
-    }
-
+    .section-text-1,
     .section-text-2 {
         font-size: 1.1rem;
     }
     
     .icon-text-grid .icon {
-        font-size: 1.0rem; /* 0.1rem smaller than 1.1rem text size */
+        font-size: 1rem;
     }
 
-    /* Layout - Sections */
+    /* Layout adjustments */
     .section {
         padding: 3rem 0.5rem;
     }
@@ -576,7 +516,7 @@ ul, ol {
         max-width: 95%;
     }
 
-    /* Components - CTA */
+    /* Component adjustments */
     .cta-headline {
         font-size: 1.8rem;
     }
@@ -589,24 +529,27 @@ ul, ol {
         font-size: 1.2rem;
     }
 
-    /* Components - Footer */
     .footer-content p {
         font-size: 0.7rem;
+    }
+
+    /* Small screens - center floating CTA */
+    .floating-cta-content {
+        justify-content: center;
     }
 }
 
 /* Tablet & Mobile shared styles */
-@media (max-width: 768px) {
-    /* Components - Floating CTA */
+@media (max-width: 1380px) {
+    /* Components - Floating CTA - Responsive behavior */
     .floating-cta {
         top: auto;
-        bottom: max(1rem, env(safe-area-inset-bottom));
-        right: max(1rem, env(safe-area-inset-right));
-        left: max(1rem, env(safe-area-inset-left));
+        right: 0;
+        left: auto;
         transform: none;
         box-shadow: none;
         border: none;
-        background: rgb(255, 255, 255, 0);
+        background: transparent;
         max-width: none;
     }
 
@@ -629,7 +572,7 @@ ul, ol {
     }
 
     .floating-cta-button {
-        background: rgba(255, 251, 0, 0.95);
+        background: var(--yellow-bg);
         color: var(--black);
         width: 200px;
         padding: 14px 0;
@@ -649,6 +592,22 @@ ul, ol {
 
     .floating-cta-button:active {
         transform: translateY(0);
+    }
+}
+
+/* Mobile specific positioning */
+@media (max-width: 768px) {
+    .floating-cta {
+        bottom: max(1rem, env(safe-area-inset-bottom));
+        right: max(1rem, env(safe-area-inset-right));
+        left: max(1rem, env(safe-area-inset-left));
+    }
+}
+
+/* Small desktop specific positioning */
+@media (min-width: 769px) and (max-width: 1380px) {
+    .floating-cta {
+        bottom: 0;
     }
 }
 
@@ -689,7 +648,7 @@ ul, ol {
     overflow-y: auto;
     transform: scale(0.9) translateY(20px);
     transition: transform 0.3s ease;
-    border: 2px solid rgba(53, 53, 53, 0.1);
+    border: 2px solid var(--shadow-light);
 }
 
 .modal-overlay.modal-open .modal-content {
@@ -723,7 +682,7 @@ ul, ol {
 
 .modal-close:hover {
     opacity: 1;
-    background: rgba(53, 53, 53, 0.1);
+    background: var(--shadow-light);
 }
 
 .modal-header {
@@ -777,7 +736,7 @@ ul, ol {
 
 .form-group input {
     padding: 14px 16px;
-    border: 2px solid rgba(53, 53, 53, 0.2);
+    border: 2px solid var(--shadow-medium);
     border-radius: 8px;
     font-size: 1rem;
     background: var(--white);
@@ -792,7 +751,7 @@ ul, ol {
 }
 
 .form-group input::placeholder {
-    color: rgba(53, 53, 53, 0.5);
+    color: var(--shadow-medium);
 }
 
 .form-submit-btn {
@@ -816,7 +775,7 @@ ul, ol {
 
 .form-submit-btn:hover:not(:disabled) {
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px var(--shadow-dark);
 }
 
 .form-submit-btn:disabled {
@@ -848,7 +807,7 @@ ul, ol {
 }
 
 .error-message h3 {
-    color: #ef4444;
+    color: var(--error-red);
     font-size: 1.5rem;
     font-weight: 400;
     margin: 0;
@@ -860,13 +819,6 @@ ul, ol {
     line-height: 1.5;
     opacity: 0.9;
     margin-bottom: 0;
-}
-
-/* Small Mobile - Centered floating CTA */
-@media (max-width: 590px) {
-    .floating-cta-content {
-        justify-content: center;
-    }
 }
 
 /* Modal responsive styles */
@@ -894,6 +846,7 @@ ul, ol {
     }
 }
 
+/* Extra small mobile adjustments */
 @media (max-width: 480px) {
     .modal-header h2 {
         font-size: 1.4rem;
