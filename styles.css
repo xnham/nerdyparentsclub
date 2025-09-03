@@ -7,6 +7,7 @@
     --white: #ffffff;
     --yellow: rgba(255, 251, 0, 1);
     --yellow-bg: rgba(255, 251, 0, 0.95);
+    --yellow-postit: #FFFC5E;
     --error-red: #ef4444;
     --color-1: #b0eaff;
     --color-2: #cfefff;
@@ -110,6 +111,60 @@ ul, ol {
     line-height: 1.7;
     font-weight: 300;
     margin-bottom: 1.8rem;
+}
+
+.project-idea {
+    background: var(--yellow-postit);
+    padding: 1rem;
+    border-radius: 3px;
+    box-shadow: 0 2px 8px var(--shadow-light);
+    margin-bottom: 1.8rem;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.4;
+    font-weight: 400;
+    transform: rotate(-1deg);
+    transition: transform 0.2s ease;
+    border: 1px solid rgba(255, 235, 59, 0.3);
+    margin: 1rem;
+    flex-shrink: 0;
+}
+
+.project-title {
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.project-description {
+    font-size: 1rem;
+    line-height: 1.3;
+    font-weight: 400;
+}
+
+.project-idea:nth-child(even) {
+    transform: rotate(1deg);
+}
+
+.project-idea:nth-child(3n) {
+    transform: rotate(-0.5deg);
+}
+
+.project-idea:hover {
+    transform: rotate(0deg) scale(1.05);
+    box-shadow: 0 4px 16px var(--shadow-medium);
+}
+
+/* Container for project ideas to arrange them in a grid */
+.article-section .project-idea {
+    display: inline-flex;
 }
 
 /* Utility typography */
@@ -466,6 +521,22 @@ ul, ol {
     .section-container {
         max-width: 95%;
     }
+
+    /* Post-it notes responsive for tablet */
+    .project-idea {
+        width: 180px;
+        height: 180px;
+        font-size: 1.05rem;
+        margin: 0.8rem;
+    }
+    
+    .project-title {
+        font-size: 1.1rem;
+    }
+    
+    .project-description {
+        font-size: 0.95rem;
+    }
 }
 
 /* Mobile styles */
@@ -531,6 +602,23 @@ ul, ol {
 
     .footer-content p {
         font-size: 0.7rem;
+    }
+
+    /* Post-it notes responsive for mobile */
+    .project-idea {
+        width: 160px;
+        height: 160px;
+        font-size: 1rem;
+        margin: 0.5rem;
+    }
+    
+    .project-title {
+        font-size: 1rem;
+        margin-bottom: 0.4rem;
+    }
+    
+    .project-description {
+        font-size: 0.9rem;
     }
 
     /* Small screens - center floating CTA */
