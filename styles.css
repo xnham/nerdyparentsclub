@@ -120,6 +120,22 @@ ul, ol {
     opacity: 0.9;
 }
 
+.cta-questions {
+    margin-top: 2rem;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.cta-questions a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: underline;
+}
+
+.cta-questions a:hover {
+    color: var(--white);
+}
+
 /* ================================
    LAYOUT - SECTIONS
    ================================ */
@@ -171,7 +187,7 @@ ul, ol {
 .cta-box {
     text-align: center;
     padding: 1.5rem;
-    margin: 3rem 0;
+    margin: 3rem 0 1rem 0;
 }
 
 .cta-headline {
@@ -195,6 +211,7 @@ ul, ol {
     margin-top: 1rem;
     transition: transform 0.2s;
     border-radius: 12px;
+    width: 300px;
     border: 2px solid var(--white);
 }
 
@@ -224,7 +241,7 @@ ul, ol {
     line-height: 1.2;
     margin-bottom: 0.5rem;
     font-weight: 400;
-    opacity: 0.9;
+    opacity: 0.8;
 }
 
 .footer-content p:last-child {
@@ -282,9 +299,28 @@ ul, ol {
     font-size: 0.8rem;
     line-height: 1.4;
     font-weight: 300;
-    opacity: 0.9;
+    opacity: 0.8;
     color: var(--black);
     margin-top: 0.5rem;
+}
+
+.floating-cta-questions {
+    font-size: 1rem;
+    line-height: 1.4;
+    font-weight: 400;
+    opacity: 0.9;
+    color: var(--black);
+    margin-top: 1rem;
+}
+
+.floating-cta-questions a {
+    color: var(--black);
+    text-decoration: underline;
+    opacity: 0.9;
+}
+
+.floating-cta-questions a:hover {
+    opacity: 1;
 }
 
 .floating-cta-button {
@@ -366,7 +402,8 @@ ul, ol {
     }
 
     .floating-cta-text,
-    .floating-cta-disclaimer {
+    .floating-cta-disclaimer,
+    .floating-cta-questions {
         display: none;
     }
 
@@ -536,7 +573,8 @@ ul, ol {
     }
 
     .floating-cta-text,
-    .floating-cta-disclaimer {
+    .floating-cta-disclaimer,
+    .floating-cta-questions {
         display: none;
     }
 
