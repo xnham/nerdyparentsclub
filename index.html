@@ -75,13 +75,13 @@
                 <div class="icon-text-grid section-text-2">
                     <div class="icon"><i class="fa-solid fa-square-check"></i></div>
                     <div class="text">You don't want family logistics to eat up all your time and energy.</div>
-                    
+
                     <div class="icon"><i class="fa-solid fa-square-check"></i></div>
                     <div class="text">You like coding things into existence or are excited to learn.</div>
-                    
+
                     <div class="icon"><i class="fa-solid fa-square-check"></i></div>
-                    <div class="text">You want to share knowledge with other families.</div>
-                    
+                    <div class="text">You want to compare notes with other families.</div>
+
                     <div class="icon"><i class="fa-solid fa-square-check"></i></i></div>
                     <div class="text">You're in the Cambridge area and embrace its inventive energy.</div>
                 </div>
@@ -96,15 +96,16 @@
                 <div class="icon-text-grid section-text-1">
                     <div class="icon"><i class="fa-solid fa-laptop-code"></i></div>
                     <div class="text">Code together, online and in person.</div>
-                    
+
                     <div class="icon"><i class="fa-solid fa-brain"></i></div>
                     <div class="text">Share hairy problems and clever solutions.</div>
-                    
+
                     <div class="icon"><i class="fa-solid fa-mug-saucer"></i></div>
                     <div class="text">Meet for coffee together once a month to give and get feedback.</div>
-                    
+
                     <div class="icon"><i class="fa-solid fa-heart"></i></div>
-                    <div class="text">Create a supportive community for both "my deployment broke" and "my toddler broke."</div>
+                    <div class="text">Create a supportive community for both "my deployment broke" and "my toddler
+                        broke."</div>
                 </div>
             </div>
         </div>
@@ -131,10 +132,12 @@
                     <div class="project-description">that automatically submits library requests</div>
                 </div>
                 <div class="project-idea">
-                    <div class="project-title">A chore reminder</div>
-                    <div class="project-description">to avoid cleaning blind spots</div>
+                    <div class="project-title">A cleaning tracker</div>
+                    <div class="project-description">to avoid blind spots</div>
                 </div>
-                <div class="project-idea">Whatever specific thing is bugging your family!</div>
+                <div class="project-idea">
+                    <div class="project-description">Whatever specific thing is bugging your family!</div>
+                </div>
             </div>
         </div>
     </div>
@@ -143,11 +146,12 @@
         <div class="section-container">
             <div class="article-section">
                 <h3 class="section-headline">Coding beginners and technical gurus are all welcome!</h3>
-                <p class="section-text-2">Some of us are just starting to become coding-curious. Others were building video games at age five. Nevertheless, we're united by two things:</p>
+                <p class="section-text-2">Some of us are just starting to become coding-curious. Others were building
+                    video games at age five. Nevertheless, we're united by two things:</p>
                 <ol class="section-text-2">
                     <li>We get interrupted by at least one child every 4 minutes.</li>
                     <li>Each one of us is the ultimate expert on our own family problems. There's no one better to
-                        design a fitting solution.</li>
+                        design solutions that fit like a glove.</li>
                 </ol>
 
                 <p class="section-text-2">Maybe you've sketched out the perfect playdate scheduling app on a burp cloth.
@@ -194,31 +198,32 @@
             <div class="modal-header">
                 <h2>Join Our List</h2>
             </div>
-            
+
             <div class="modal-body">
                 <p class="modal-description">Get notified about club events and projects</p>
-                
+
                 <form id="signup-form" class="signup-form">
                     <div class="form-group">
                         <label for="signup-name">Full Name</label>
                         <input type="text" id="signup-name" name="name" required placeholder="Your full name">
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="signup-email">Email Address</label>
-                        <input type="email" id="signup-email" name="email" required placeholder="your.email@example.com">
+                        <input type="email" id="signup-email" name="email" required
+                            placeholder="your.email@example.com">
                     </div>
-                    
+
                     <button type="submit" class="form-submit-btn">
                         <span class="btn-text">Submit</span>
                         <span class="btn-loading" style="display: none;">Joining...</span>
                     </button>
                 </form>
-                
+
                 <div id="signup-success" class="success-message" style="display: none;">
                     <h3>Thanks for joining our list!</h3>
                 </div>
-                
+
                 <div id="signup-error" class="error-message" style="display: none;">
                     <h3>Oops! Something went wrong</h3>
                     <p>Please try again or email us directly if the problem persists.</p>
@@ -247,7 +252,7 @@
             const modal = document.getElementById('signup-modal');
             modal.classList.remove('modal-open');
             document.body.style.overflow = ''; // Restore scrolling
-            
+
             // Reset form and messages, restore all elements
             document.getElementById('signup-form').reset();
             document.getElementById('signup-success').style.display = 'none';
@@ -272,29 +277,29 @@
         // Form submission handling
         document.addEventListener('DOMContentLoaded', function () {
             const form = document.getElementById('signup-form');
-            
+
             form.addEventListener('submit', function (e) {
                 e.preventDefault();
-                
+
                 const submitBtn = form.querySelector('.form-submit-btn');
                 const btnText = submitBtn.querySelector('.btn-text');
                 const btnLoading = submitBtn.querySelector('.btn-loading');
-                
+
                 // Show loading state
                 btnText.style.display = 'none';
                 btnLoading.style.display = 'inline';
                 submitBtn.disabled = true;
-                
+
                 const formData = new FormData(form);
                 const name = formData.get('name');
                 const email = formData.get('email');
-                
+
                 // Submit to Google Forms
                 const googleFormsUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSf2su4Ni_vXGG0ZQUBZVUcu8_wH2bxanGeXz39c4ldY8I7D2w/formResponse';
                 const googleFormData = new FormData();
                 googleFormData.append('entry.208172133', name);
                 googleFormData.append('entry.1986487411', email);
-                
+
                 fetch(googleFormsUrl, {
                     method: 'POST',
                     mode: 'no-cors',
@@ -304,33 +309,33 @@
                     btnText.style.display = 'inline';
                     btnLoading.style.display = 'none';
                     submitBtn.disabled = false;
-                    
+
                     // Show success message and hide other elements
                     form.style.display = 'none';
                     document.querySelector('.modal-header').style.display = 'none';
                     document.querySelector('.modal-description').style.display = 'none';
                     document.getElementById('signup-success').style.display = 'flex';
-                    
+
                     // Auto-close modal with smooth fade-out
                     const successMessage = document.getElementById('signup-success');
-                    
+
                     // Phase 1: Start fade-out after 4 seconds
                     setTimeout(() => {
                         successMessage.classList.add('fade-out');
                     }, 4000);
-                    
+
                     // Phase 2: Close modal after fade-out completes
                     setTimeout(() => {
                         closeSignupModal();
                     }, 4700);
                 }).catch(error => {
                     console.error('Error:', error);
-                    
+
                     // Reset button state
                     btnText.style.display = 'inline';
                     btnLoading.style.display = 'none';
                     submitBtn.disabled = false;
-                    
+
                     // Show error message and hide other elements
                     form.style.display = 'none';
                     document.querySelector('.modal-header').style.display = 'none';
