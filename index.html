@@ -259,10 +259,12 @@
             document.getElementById('signup-success').style.display = 'none';
             document.getElementById('signup-success').classList.remove('fade-out');
             document.getElementById('signup-error').style.display = 'none';
-            document.getElementById('signup-form').style.display = 'block';
-            document.querySelector('.modal-close-container').style.display = 'flex';
-            document.querySelector('.modal-header').style.display = 'flex';
-            document.querySelector('.modal-description').style.display = 'block';
+            
+            // Remove inline display styles completely to let CSS take over
+            document.getElementById('signup-form').style.display = '';
+            document.querySelector('.modal-close-container').style.display = '';
+            document.querySelector('.modal-header').style.display = '';
+            document.querySelector('.modal-description').style.display = '';
         }
 
         // Close modal when clicking outside
