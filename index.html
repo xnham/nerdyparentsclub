@@ -231,8 +231,8 @@
                 </form>
 
                 <div id="signup-success" class="success-message" style="display: none;">
-                    <h3>Thanks for joining our list!</h3>
-                    <p>Yay for nerdy parents, and we hope to see you at an event soon!</p>
+                    <h3>Thanks for joining our list.</h3>
+                    <p>We're excited to have you!</p>
                 </div>
 
                 <div id="signup-error" class="error-message" style="display: none;">
@@ -262,12 +262,12 @@
         function closeSignupModal() {
             const modal = document.getElementById('signup-modal');
             modal.classList.remove('modal-open');
+            modal.classList.remove('modal-fade-out');
             document.body.style.overflow = ''; // Restore scrolling
 
             // Reset form and messages, restore all elements
             document.getElementById('signup-form').reset();
             document.getElementById('signup-success').style.display = 'none';
-            document.getElementById('signup-success').classList.remove('fade-out');
             document.getElementById('signup-error').style.display = 'none';
             
             // Remove inline display styles completely to let CSS take over
@@ -329,18 +329,18 @@
                     document.querySelector('.modal-description').style.display = 'none';
                     document.getElementById('signup-success').style.display = 'flex';
 
-                    // Auto-close modal with smooth fade-out
-                    const successMessage = document.getElementById('signup-success');
-
-                    // Phase 1: Start fade-out after 4 seconds
+                    // Auto-close modal with smooth fade-out after 3 seconds
+                    const modal = document.getElementById('signup-modal');
+                    
                     setTimeout(() => {
-                        successMessage.classList.add('fade-out');
-                    }, 4000);
-
-                    // Phase 2: Close modal after fade-out completes
-                    setTimeout(() => {
-                        closeSignupModal();
-                    }, 4700);
+                        // Add fade-out class to entire modal
+                        modal.classList.add('modal-fade-out');
+                        
+                        // Close modal after fade animation completes (0.6s)
+                        setTimeout(() => {
+                            closeSignupModal();
+                        }, 600);
+                    }, 3000);
                 }).catch(error => {
                     console.error('Error:', error);
 

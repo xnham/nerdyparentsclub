@@ -484,6 +484,17 @@ ul, ol {
     transform: scale(1) translateY(0);
 }
 
+.modal-overlay.modal-fade-out {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.6s ease;
+}
+
+.modal-overlay.modal-fade-out .modal-content {
+    transform: scale(0.95) translateY(10px);
+    transition: transform 0.6s ease;
+}
+
 .modal-close-container {
     width: 100%;
     display: flex;
@@ -625,15 +636,11 @@ ul, ol {
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-.success-message.fade-out {
-    opacity: 0.3;
-    transform: scale(0.98);
-}
 
 .success-message h3 {
     font-size: 1.5rem;
-    font-weight: 500;
-    margin: 0;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
 }
 
 .error-message h3 {
