@@ -595,15 +595,16 @@ ul, ol {
 }
 
 .form-submit-btn {
-    background: var(--black);
-    color: var(--white);
-    padding: 14px 24px;
+    background: #005EF5;
+    color: #FFFFFF;
+    padding: 8px 32px;
     border: none;
     border-radius: 8px;
-    font-size: 1.2rem;
-    font-weight: 600;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'Roboto', system-ui, sans-serif;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     min-height: 48px;
     display: flex;
@@ -611,15 +612,24 @@ ul, ol {
     justify-content: center;
     margin-top: 0.5rem;
     width: 100%;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .form-submit-btn:hover:not(:disabled) {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px var(--shadow-dark);
+    background: #0052EB;
+    transform: scale(1.05);
+    transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-submit-btn:active:not(:disabled) {
+    transform: scale(0.95);
+    transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-submit-btn:disabled {
-    opacity: 0.7;
+    background: #C0D4FF;
+    color: #FFFFFF;
+    opacity: 0.5;
     cursor: not-allowed;
     transform: none;
 }
@@ -982,8 +992,8 @@ ul, ol {
     }
     
     .form-submit-btn {
-        padding: 12px 20px;
-        font-size: 1.1rem;
+        padding: 8px 24px;
+        font-size: 18px;
     }
 
     .modal-body {
